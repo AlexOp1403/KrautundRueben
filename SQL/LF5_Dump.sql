@@ -2,7 +2,6 @@ DROP DATABASE IF EXISTS krautundrueben;
 CREATE DATABASE IF NOT EXISTS krautundrueben;
 USE krautundrueben;
 
-//NEU:: für den Trigger: Trigger_Loesch_Geschichte von .Kunde
 CREATE TABLE GELOESCHTE_INFO (
     Geloeschte_Kundennummer VARCHAR(10),
     Loeschdatum VARCHAR(25),
