@@ -1,0 +1,451 @@
+{
+  "tags": [{
+    "name": "SENDUNGHasManySENDUNG_ZUTAT",
+    "description": "Everything about has many relation"
+  }],
+  "paths": {
+    "/api/v1/SENDUNG/has/SENDUNG_ZUTAT": {
+      "get": {
+        "tags": [
+          "SENDUNGHasManySENDUNG_ZUTAT"
+        ],
+        "summary": "Get SENDUNG list with SENDUNG_ZUTAT children",
+        "description": "",
+        "operationId": "SENDUNGHasManySENDUNG_ZUTATList",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/SENDUNG/{SENDUNGId}/SENDUNG_ZUTAT": {
+      "get": {
+        "tags": [
+          "SENDUNGHasManySENDUNG_ZUTAT"
+        ],
+        "summary": "Find SENDUNG_ZUTAT list by parent SENDUNG id",
+        "description": "Returns a single SENDUNG",
+        "operationId": "getSENDUNG_ZUTATBySENDUNGId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "SENDUNGId",
+            "in": "path",
+            "description": "ID of SENDUNG to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": "object"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "SENDUNG not found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "SENDUNGHasManySENDUNG_ZUTAT"
+        ],
+        "summary": "Insert SENDUNG_ZUTAT under a parent SENDUNG",
+        "description": "Returns a single SENDUNG",
+        "operationId": "insertSENDUNG_ZUTATBySENDUNGId",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "body",
+            "name": "body",
+            "description": "SENDUNG_ZUTAT object to insert",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "SENDUNGId",
+            "in": "path",
+            "description": "ID of SENDUNG to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/SENDUNG/{SENDUNGId}/SENDUNG_ZUTAT/{SENDUNG_ZUTATId}": {
+      "get": {
+        "tags": [
+          "SENDUNGHasManySENDUNG_ZUTAT"
+        ],
+        "summary": "Get by SENDUNG_ZUTAT id parent SENDUNG id",
+        "description": "Returns a single SENDUNG",
+        "operationId": "getSENDUNG_ZUTATByIdAndSENDUNGId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "SENDUNGId",
+            "in": "path",
+            "description": "ID of parent SENDUNG",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "SENDUNG_ZUTATId",
+            "in": "path",
+            "description": "ID of SENDUNG_ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": "object"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "SENDUNGHasManySENDUNG_ZUTAT"
+        ],
+        "summary": "Delete by SENDUNG_ZUTAT id parent SENDUNG id",
+        "description": "Returns a single SENDUNG",
+        "operationId": "deleteSENDUNG_ZUTATByIdAndSENDUNGId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "SENDUNGId",
+            "in": "path",
+            "description": "ID of parent SENDUNG",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "SENDUNG_ZUTATId",
+            "in": "path",
+            "description": "ID of cSENDUNG_ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "SENDUNGHasManySENDUNG_ZUTAT"
+        ],
+        "summary": "Update SENDUNG_ZUTAT under a parent SENDUNG",
+        "description": "Returns a single SENDUNG",
+        "operationId": "updateSENDUNG_ZUTATByIdAndSENDUNGId",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "body",
+            "name": "body",
+            "description": "SENDUNG_ZUTAT object to insert",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "SENDUNGId",
+            "in": "path",
+            "description": "ID of SENDUNG to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "SENDUNG_ZUTATId",
+            "in": "path",
+            "description": "ID of SENDUNG_ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/SENDUNG/{SENDUNGId}/SENDUNG_ZUTAT/{SENDUNG_ZUTATId}/exists": {
+      "get": {
+        "tags": [
+          "SENDUNGHasManySENDUNG_ZUTAT"
+        ],
+        "summary": "Check row exists by SENDUNG_ZUTAT id and parent SENDUNG id",
+        "description": "",
+        "operationId": "existsSENDUNG_ZUTATByIdAndSENDUNGId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "SENDUNGId",
+            "in": "path",
+            "description": "ID of parent SENDUNG",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "SENDUNG_ZUTATId",
+            "in": "path",
+            "description": "ID of SENDUNG_ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/SENDUNG/{SENDUNGId}/SENDUNG_ZUTAT/findOne": {
+      "get": {
+        "tags": [
+          "SENDUNGHasManySENDUNG_ZUTAT"
+        ],
+        "summary": "Find one SENDUNG_ZUTAT by parent SENDUNG id and filters",
+        "description": "",
+        "operationId": "findOneSENDUNG_ZUTATBySENDUNGId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "SENDUNGId",
+            "in": "path",
+            "description": "ID of parent SENDUNG",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/SENDUNG/{SENDUNGId}/SENDUNG_ZUTAT/count": {
+      "get": {
+        "tags": [
+          "SENDUNGHasManySENDUNG_ZUTAT"
+        ],
+        "summary": "Get SENDUNG_ZUTAT count by parent id and filter",
+        "description": "",
+        "operationId": "getCountWithinSENDUNGId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "SENDUNGId",
+            "in": "path",
+            "description": "ID of parent SENDUNG",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}

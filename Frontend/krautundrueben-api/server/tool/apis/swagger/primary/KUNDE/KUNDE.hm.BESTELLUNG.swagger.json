@@ -1,0 +1,451 @@
+{
+  "tags": [{
+    "name": "KUNDEHasManyBESTELLUNG",
+    "description": "Everything about has many relation"
+  }],
+  "paths": {
+    "/api/v1/KUNDE/has/BESTELLUNG": {
+      "get": {
+        "tags": [
+          "KUNDEHasManyBESTELLUNG"
+        ],
+        "summary": "Get KUNDE list with BESTELLUNG children",
+        "description": "",
+        "operationId": "KUNDEHasManyBESTELLUNGList",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/KUNDE/{KUNDEId}/BESTELLUNG": {
+      "get": {
+        "tags": [
+          "KUNDEHasManyBESTELLUNG"
+        ],
+        "summary": "Find BESTELLUNG list by parent KUNDE id",
+        "description": "Returns a single KUNDE",
+        "operationId": "getBESTELLUNGByKUNDEId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "KUNDEId",
+            "in": "path",
+            "description": "ID of KUNDE to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": "object"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "KUNDE not found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "KUNDEHasManyBESTELLUNG"
+        ],
+        "summary": "Insert BESTELLUNG under a parent KUNDE",
+        "description": "Returns a single KUNDE",
+        "operationId": "insertBESTELLUNGByKUNDEId",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "body",
+            "name": "body",
+            "description": "BESTELLUNG object to insert",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "KUNDEId",
+            "in": "path",
+            "description": "ID of KUNDE to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/KUNDE/{KUNDEId}/BESTELLUNG/{BESTELLUNGId}": {
+      "get": {
+        "tags": [
+          "KUNDEHasManyBESTELLUNG"
+        ],
+        "summary": "Get by BESTELLUNG id parent KUNDE id",
+        "description": "Returns a single KUNDE",
+        "operationId": "getBESTELLUNGByIdAndKUNDEId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "KUNDEId",
+            "in": "path",
+            "description": "ID of parent KUNDE",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "BESTELLUNGId",
+            "in": "path",
+            "description": "ID of BESTELLUNG",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": "object"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "KUNDEHasManyBESTELLUNG"
+        ],
+        "summary": "Delete by BESTELLUNG id parent KUNDE id",
+        "description": "Returns a single KUNDE",
+        "operationId": "deleteBESTELLUNGByIdAndKUNDEId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "KUNDEId",
+            "in": "path",
+            "description": "ID of parent KUNDE",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "BESTELLUNGId",
+            "in": "path",
+            "description": "ID of cBESTELLUNG",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "KUNDEHasManyBESTELLUNG"
+        ],
+        "summary": "Update BESTELLUNG under a parent KUNDE",
+        "description": "Returns a single KUNDE",
+        "operationId": "updateBESTELLUNGByIdAndKUNDEId",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "body",
+            "name": "body",
+            "description": "BESTELLUNG object to insert",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "KUNDEId",
+            "in": "path",
+            "description": "ID of KUNDE to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "BESTELLUNGId",
+            "in": "path",
+            "description": "ID of BESTELLUNG",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/KUNDE/{KUNDEId}/BESTELLUNG/{BESTELLUNGId}/exists": {
+      "get": {
+        "tags": [
+          "KUNDEHasManyBESTELLUNG"
+        ],
+        "summary": "Check row exists by BESTELLUNG id and parent KUNDE id",
+        "description": "",
+        "operationId": "existsBESTELLUNGByIdAndKUNDEId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "KUNDEId",
+            "in": "path",
+            "description": "ID of parent KUNDE",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "BESTELLUNGId",
+            "in": "path",
+            "description": "ID of BESTELLUNG",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/KUNDE/{KUNDEId}/BESTELLUNG/findOne": {
+      "get": {
+        "tags": [
+          "KUNDEHasManyBESTELLUNG"
+        ],
+        "summary": "Find one BESTELLUNG by parent KUNDE id and filters",
+        "description": "",
+        "operationId": "findOneBESTELLUNGByKUNDEId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "KUNDEId",
+            "in": "path",
+            "description": "ID of parent KUNDE",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/KUNDE/{KUNDEId}/BESTELLUNG/count": {
+      "get": {
+        "tags": [
+          "KUNDEHasManyBESTELLUNG"
+        ],
+        "summary": "Get BESTELLUNG count by parent id and filter",
+        "description": "",
+        "operationId": "getCountWithinKUNDEId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "KUNDEId",
+            "in": "path",
+            "description": "ID of parent KUNDE",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}

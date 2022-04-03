@@ -1,0 +1,60 @@
+.zutaten-container{
+    margin: 5%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    color: rgb(0, 0, 0);
+}
+
+.card{
+    min-width: 25vw;
+    min-height: 30vh;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.zutaten{
+    padding: 5%;
+    grid-auto-rows: auto;
+}
+
+.continue-button{
+    text-align: right;
+    margin-top: 2%;
+    margin-right: 2%;
+}
+.anzahl-input{
+    width: 20%;
+    margin: auto;
+}
+
+.gesamtpreis {
+    width: 100%;
+    text-align: center;
+}
+
+.bestellung {
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.preis {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+}
+
+.count-badge{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background: green;
+    color: white;
+}

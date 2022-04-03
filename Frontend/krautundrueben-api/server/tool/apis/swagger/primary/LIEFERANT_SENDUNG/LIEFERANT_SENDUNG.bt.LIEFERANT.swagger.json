@@ -1,0 +1,60 @@
+{
+  "tags": [{
+    "name": "LIEFERANT_SENDUNGBelongsToLIEFERANT",
+    "description": "Everything about belongs to relation"
+  }],
+  "paths": {
+    "/api/v1/LIEFERANT_SENDUNG/belongs/LIEFERANT": {
+      "get": {
+        "tags": [
+          "LIEFERANT_SENDUNGBelongsToLIEFERANT"
+        ],
+        "summary": "Get LIEFERANT_SENDUNG list with LIEFERANT parent",
+        "description": "",
+        "operationId": "LIEFERANT_SENDUNGWithParent",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "Page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "Pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "Sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}

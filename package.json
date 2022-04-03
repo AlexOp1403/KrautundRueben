@@ -1,0 +1,11 @@
+{
+  "name": "Lernfeld5",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "light-server": "^2.9.1"
+  },
+  "scripts": {
+    "serve": "light-server -b localhost -p 3000 -w 'Frontend/**' -s ./Frontend"
+  }
+}

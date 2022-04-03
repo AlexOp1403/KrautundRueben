@@ -1,0 +1,21 @@
+.rezept-container{
+    margin: 5%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    color: rgb(0, 0, 0);
+}
+
+.card{
+    min-width: 25vw;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+.card-body{
+    text-align: center;
+}
+.rezept{
+    padding: 5%;
+    grid-auto-rows: auto;
+}

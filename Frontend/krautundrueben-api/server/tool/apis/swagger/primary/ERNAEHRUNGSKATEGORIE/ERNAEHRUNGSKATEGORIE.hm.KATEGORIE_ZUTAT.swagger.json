@@ -1,0 +1,451 @@
+{
+  "tags": [{
+    "name": "ERNAEHRUNGSKATEGORIEHasManyKATEGORIE_ZUTAT",
+    "description": "Everything about has many relation"
+  }],
+  "paths": {
+    "/api/v1/ERNAEHRUNGSKATEGORIE/has/KATEGORIE_ZUTAT": {
+      "get": {
+        "tags": [
+          "ERNAEHRUNGSKATEGORIEHasManyKATEGORIE_ZUTAT"
+        ],
+        "summary": "Get ERNAEHRUNGSKATEGORIE list with KATEGORIE_ZUTAT children",
+        "description": "",
+        "operationId": "ERNAEHRUNGSKATEGORIEHasManyKATEGORIE_ZUTATList",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ERNAEHRUNGSKATEGORIE/{ERNAEHRUNGSKATEGORIEId}/KATEGORIE_ZUTAT": {
+      "get": {
+        "tags": [
+          "ERNAEHRUNGSKATEGORIEHasManyKATEGORIE_ZUTAT"
+        ],
+        "summary": "Find KATEGORIE_ZUTAT list by parent ERNAEHRUNGSKATEGORIE id",
+        "description": "Returns a single ERNAEHRUNGSKATEGORIE",
+        "operationId": "getKATEGORIE_ZUTATByERNAEHRUNGSKATEGORIEId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ERNAEHRUNGSKATEGORIEId",
+            "in": "path",
+            "description": "ID of ERNAEHRUNGSKATEGORIE to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": "object"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "ERNAEHRUNGSKATEGORIE not found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ERNAEHRUNGSKATEGORIEHasManyKATEGORIE_ZUTAT"
+        ],
+        "summary": "Insert KATEGORIE_ZUTAT under a parent ERNAEHRUNGSKATEGORIE",
+        "description": "Returns a single ERNAEHRUNGSKATEGORIE",
+        "operationId": "insertKATEGORIE_ZUTATByERNAEHRUNGSKATEGORIEId",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "body",
+            "name": "body",
+            "description": "KATEGORIE_ZUTAT object to insert",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "ERNAEHRUNGSKATEGORIEId",
+            "in": "path",
+            "description": "ID of ERNAEHRUNGSKATEGORIE to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ERNAEHRUNGSKATEGORIE/{ERNAEHRUNGSKATEGORIEId}/KATEGORIE_ZUTAT/{KATEGORIE_ZUTATId}": {
+      "get": {
+        "tags": [
+          "ERNAEHRUNGSKATEGORIEHasManyKATEGORIE_ZUTAT"
+        ],
+        "summary": "Get by KATEGORIE_ZUTAT id parent ERNAEHRUNGSKATEGORIE id",
+        "description": "Returns a single ERNAEHRUNGSKATEGORIE",
+        "operationId": "getKATEGORIE_ZUTATByIdAndERNAEHRUNGSKATEGORIEId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ERNAEHRUNGSKATEGORIEId",
+            "in": "path",
+            "description": "ID of parent ERNAEHRUNGSKATEGORIE",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "KATEGORIE_ZUTATId",
+            "in": "path",
+            "description": "ID of KATEGORIE_ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": "object"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ERNAEHRUNGSKATEGORIEHasManyKATEGORIE_ZUTAT"
+        ],
+        "summary": "Delete by KATEGORIE_ZUTAT id parent ERNAEHRUNGSKATEGORIE id",
+        "description": "Returns a single ERNAEHRUNGSKATEGORIE",
+        "operationId": "deleteKATEGORIE_ZUTATByIdAndERNAEHRUNGSKATEGORIEId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ERNAEHRUNGSKATEGORIEId",
+            "in": "path",
+            "description": "ID of parent ERNAEHRUNGSKATEGORIE",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "KATEGORIE_ZUTATId",
+            "in": "path",
+            "description": "ID of cKATEGORIE_ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ERNAEHRUNGSKATEGORIEHasManyKATEGORIE_ZUTAT"
+        ],
+        "summary": "Update KATEGORIE_ZUTAT under a parent ERNAEHRUNGSKATEGORIE",
+        "description": "Returns a single ERNAEHRUNGSKATEGORIE",
+        "operationId": "updateKATEGORIE_ZUTATByIdAndERNAEHRUNGSKATEGORIEId",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "body",
+            "name": "body",
+            "description": "KATEGORIE_ZUTAT object to insert",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "ERNAEHRUNGSKATEGORIEId",
+            "in": "path",
+            "description": "ID of ERNAEHRUNGSKATEGORIE to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "KATEGORIE_ZUTATId",
+            "in": "path",
+            "description": "ID of KATEGORIE_ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ERNAEHRUNGSKATEGORIE/{ERNAEHRUNGSKATEGORIEId}/KATEGORIE_ZUTAT/{KATEGORIE_ZUTATId}/exists": {
+      "get": {
+        "tags": [
+          "ERNAEHRUNGSKATEGORIEHasManyKATEGORIE_ZUTAT"
+        ],
+        "summary": "Check row exists by KATEGORIE_ZUTAT id and parent ERNAEHRUNGSKATEGORIE id",
+        "description": "",
+        "operationId": "existsKATEGORIE_ZUTATByIdAndERNAEHRUNGSKATEGORIEId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ERNAEHRUNGSKATEGORIEId",
+            "in": "path",
+            "description": "ID of parent ERNAEHRUNGSKATEGORIE",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "KATEGORIE_ZUTATId",
+            "in": "path",
+            "description": "ID of KATEGORIE_ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ERNAEHRUNGSKATEGORIE/{ERNAEHRUNGSKATEGORIEId}/KATEGORIE_ZUTAT/findOne": {
+      "get": {
+        "tags": [
+          "ERNAEHRUNGSKATEGORIEHasManyKATEGORIE_ZUTAT"
+        ],
+        "summary": "Find one KATEGORIE_ZUTAT by parent ERNAEHRUNGSKATEGORIE id and filters",
+        "description": "",
+        "operationId": "findOneKATEGORIE_ZUTATByERNAEHRUNGSKATEGORIEId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ERNAEHRUNGSKATEGORIEId",
+            "in": "path",
+            "description": "ID of parent ERNAEHRUNGSKATEGORIE",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ERNAEHRUNGSKATEGORIE/{ERNAEHRUNGSKATEGORIEId}/KATEGORIE_ZUTAT/count": {
+      "get": {
+        "tags": [
+          "ERNAEHRUNGSKATEGORIEHasManyKATEGORIE_ZUTAT"
+        ],
+        "summary": "Get KATEGORIE_ZUTAT count by parent id and filter",
+        "description": "",
+        "operationId": "getCountWithinERNAEHRUNGSKATEGORIEId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ERNAEHRUNGSKATEGORIEId",
+            "in": "path",
+            "description": "ID of parent ERNAEHRUNGSKATEGORIE",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}

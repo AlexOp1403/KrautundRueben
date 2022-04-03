@@ -1,0 +1,451 @@
+{
+  "tags": [{
+    "name": "LIEFERANTHasManyLIEFERANT_SENDUNG",
+    "description": "Everything about has many relation"
+  }],
+  "paths": {
+    "/api/v1/LIEFERANT/has/LIEFERANT_SENDUNG": {
+      "get": {
+        "tags": [
+          "LIEFERANTHasManyLIEFERANT_SENDUNG"
+        ],
+        "summary": "Get LIEFERANT list with LIEFERANT_SENDUNG children",
+        "description": "",
+        "operationId": "LIEFERANTHasManyLIEFERANT_SENDUNGList",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/LIEFERANT/{LIEFERANTId}/LIEFERANT_SENDUNG": {
+      "get": {
+        "tags": [
+          "LIEFERANTHasManyLIEFERANT_SENDUNG"
+        ],
+        "summary": "Find LIEFERANT_SENDUNG list by parent LIEFERANT id",
+        "description": "Returns a single LIEFERANT",
+        "operationId": "getLIEFERANT_SENDUNGByLIEFERANTId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "LIEFERANTId",
+            "in": "path",
+            "description": "ID of LIEFERANT to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": "object"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "LIEFERANT not found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "LIEFERANTHasManyLIEFERANT_SENDUNG"
+        ],
+        "summary": "Insert LIEFERANT_SENDUNG under a parent LIEFERANT",
+        "description": "Returns a single LIEFERANT",
+        "operationId": "insertLIEFERANT_SENDUNGByLIEFERANTId",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "body",
+            "name": "body",
+            "description": "LIEFERANT_SENDUNG object to insert",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "LIEFERANTId",
+            "in": "path",
+            "description": "ID of LIEFERANT to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/LIEFERANT/{LIEFERANTId}/LIEFERANT_SENDUNG/{LIEFERANT_SENDUNGId}": {
+      "get": {
+        "tags": [
+          "LIEFERANTHasManyLIEFERANT_SENDUNG"
+        ],
+        "summary": "Get by LIEFERANT_SENDUNG id parent LIEFERANT id",
+        "description": "Returns a single LIEFERANT",
+        "operationId": "getLIEFERANT_SENDUNGByIdAndLIEFERANTId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "LIEFERANTId",
+            "in": "path",
+            "description": "ID of parent LIEFERANT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "LIEFERANT_SENDUNGId",
+            "in": "path",
+            "description": "ID of LIEFERANT_SENDUNG",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": "object"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "LIEFERANTHasManyLIEFERANT_SENDUNG"
+        ],
+        "summary": "Delete by LIEFERANT_SENDUNG id parent LIEFERANT id",
+        "description": "Returns a single LIEFERANT",
+        "operationId": "deleteLIEFERANT_SENDUNGByIdAndLIEFERANTId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "LIEFERANTId",
+            "in": "path",
+            "description": "ID of parent LIEFERANT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "LIEFERANT_SENDUNGId",
+            "in": "path",
+            "description": "ID of cLIEFERANT_SENDUNG",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "LIEFERANTHasManyLIEFERANT_SENDUNG"
+        ],
+        "summary": "Update LIEFERANT_SENDUNG under a parent LIEFERANT",
+        "description": "Returns a single LIEFERANT",
+        "operationId": "updateLIEFERANT_SENDUNGByIdAndLIEFERANTId",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "body",
+            "name": "body",
+            "description": "LIEFERANT_SENDUNG object to insert",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "LIEFERANTId",
+            "in": "path",
+            "description": "ID of LIEFERANT to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "LIEFERANT_SENDUNGId",
+            "in": "path",
+            "description": "ID of LIEFERANT_SENDUNG",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/LIEFERANT/{LIEFERANTId}/LIEFERANT_SENDUNG/{LIEFERANT_SENDUNGId}/exists": {
+      "get": {
+        "tags": [
+          "LIEFERANTHasManyLIEFERANT_SENDUNG"
+        ],
+        "summary": "Check row exists by LIEFERANT_SENDUNG id and parent LIEFERANT id",
+        "description": "",
+        "operationId": "existsLIEFERANT_SENDUNGByIdAndLIEFERANTId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "LIEFERANTId",
+            "in": "path",
+            "description": "ID of parent LIEFERANT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "LIEFERANT_SENDUNGId",
+            "in": "path",
+            "description": "ID of LIEFERANT_SENDUNG",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/LIEFERANT/{LIEFERANTId}/LIEFERANT_SENDUNG/findOne": {
+      "get": {
+        "tags": [
+          "LIEFERANTHasManyLIEFERANT_SENDUNG"
+        ],
+        "summary": "Find one LIEFERANT_SENDUNG by parent LIEFERANT id and filters",
+        "description": "",
+        "operationId": "findOneLIEFERANT_SENDUNGByLIEFERANTId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "LIEFERANTId",
+            "in": "path",
+            "description": "ID of parent LIEFERANT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/LIEFERANT/{LIEFERANTId}/LIEFERANT_SENDUNG/count": {
+      "get": {
+        "tags": [
+          "LIEFERANTHasManyLIEFERANT_SENDUNG"
+        ],
+        "summary": "Get LIEFERANT_SENDUNG count by parent id and filter",
+        "description": "",
+        "operationId": "getCountWithinLIEFERANTId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "LIEFERANTId",
+            "in": "path",
+            "description": "ID of parent LIEFERANT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}

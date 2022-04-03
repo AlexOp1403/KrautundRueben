@@ -1,0 +1,45 @@
+.zutaten-container{
+    margin: 5%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    color: rgb(0, 0, 0);
+}
+
+.card{
+    min-width: 25vw;
+    min-height: 30vh;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.zutaten{
+    padding: 5%;
+    grid-auto-rows: auto;
+}
+
+.bestellung {
+    width: 30%;
+    margin: auto;
+}
+
+.preis {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+}
+
+.bestell-button{
+ width: 100%;
+    margin-bottom: 2%;
+}
+
+.anzahl-input{
+    width: 20%;
+    margin: auto;
+}

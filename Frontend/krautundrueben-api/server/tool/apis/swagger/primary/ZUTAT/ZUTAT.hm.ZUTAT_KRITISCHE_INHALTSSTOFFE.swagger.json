@@ -1,0 +1,451 @@
+{
+  "tags": [{
+    "name": "ZUTATHasManyZUTAT_KRITISCHE_INHALTSSTOFFE",
+    "description": "Everything about has many relation"
+  }],
+  "paths": {
+    "/api/v1/ZUTAT/has/ZUTAT_KRITISCHE_INHALTSSTOFFE": {
+      "get": {
+        "tags": [
+          "ZUTATHasManyZUTAT_KRITISCHE_INHALTSSTOFFE"
+        ],
+        "summary": "Get ZUTAT list with ZUTAT_KRITISCHE_INHALTSSTOFFE children",
+        "description": "",
+        "operationId": "ZUTATHasManyZUTAT_KRITISCHE_INHALTSSTOFFEList",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ZUTAT/{ZUTATId}/ZUTAT_KRITISCHE_INHALTSSTOFFE": {
+      "get": {
+        "tags": [
+          "ZUTATHasManyZUTAT_KRITISCHE_INHALTSSTOFFE"
+        ],
+        "summary": "Find ZUTAT_KRITISCHE_INHALTSSTOFFE list by parent ZUTAT id",
+        "description": "Returns a single ZUTAT",
+        "operationId": "getZUTAT_KRITISCHE_INHALTSSTOFFEByZUTATId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ZUTATId",
+            "in": "path",
+            "description": "ID of ZUTAT to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": "object"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "ZUTAT not found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ZUTATHasManyZUTAT_KRITISCHE_INHALTSSTOFFE"
+        ],
+        "summary": "Insert ZUTAT_KRITISCHE_INHALTSSTOFFE under a parent ZUTAT",
+        "description": "Returns a single ZUTAT",
+        "operationId": "insertZUTAT_KRITISCHE_INHALTSSTOFFEByZUTATId",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "body",
+            "name": "body",
+            "description": "ZUTAT_KRITISCHE_INHALTSSTOFFE object to insert",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "ZUTATId",
+            "in": "path",
+            "description": "ID of ZUTAT to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ZUTAT/{ZUTATId}/ZUTAT_KRITISCHE_INHALTSSTOFFE/{ZUTAT_KRITISCHE_INHALTSSTOFFEId}": {
+      "get": {
+        "tags": [
+          "ZUTATHasManyZUTAT_KRITISCHE_INHALTSSTOFFE"
+        ],
+        "summary": "Get by ZUTAT_KRITISCHE_INHALTSSTOFFE id parent ZUTAT id",
+        "description": "Returns a single ZUTAT",
+        "operationId": "getZUTAT_KRITISCHE_INHALTSSTOFFEByIdAndZUTATId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ZUTATId",
+            "in": "path",
+            "description": "ID of parent ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "ZUTAT_KRITISCHE_INHALTSSTOFFEId",
+            "in": "path",
+            "description": "ID of ZUTAT_KRITISCHE_INHALTSSTOFFE",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": "object"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ZUTATHasManyZUTAT_KRITISCHE_INHALTSSTOFFE"
+        ],
+        "summary": "Delete by ZUTAT_KRITISCHE_INHALTSSTOFFE id parent ZUTAT id",
+        "description": "Returns a single ZUTAT",
+        "operationId": "deleteZUTAT_KRITISCHE_INHALTSSTOFFEByIdAndZUTATId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ZUTATId",
+            "in": "path",
+            "description": "ID of parent ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "ZUTAT_KRITISCHE_INHALTSSTOFFEId",
+            "in": "path",
+            "description": "ID of cZUTAT_KRITISCHE_INHALTSSTOFFE",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ZUTATHasManyZUTAT_KRITISCHE_INHALTSSTOFFE"
+        ],
+        "summary": "Update ZUTAT_KRITISCHE_INHALTSSTOFFE under a parent ZUTAT",
+        "description": "Returns a single ZUTAT",
+        "operationId": "updateZUTAT_KRITISCHE_INHALTSSTOFFEByIdAndZUTATId",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "body",
+            "name": "body",
+            "description": "ZUTAT_KRITISCHE_INHALTSSTOFFE object to insert",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "ZUTATId",
+            "in": "path",
+            "description": "ID of ZUTAT to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "ZUTAT_KRITISCHE_INHALTSSTOFFEId",
+            "in": "path",
+            "description": "ID of ZUTAT_KRITISCHE_INHALTSSTOFFE",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ZUTAT/{ZUTATId}/ZUTAT_KRITISCHE_INHALTSSTOFFE/{ZUTAT_KRITISCHE_INHALTSSTOFFEId}/exists": {
+      "get": {
+        "tags": [
+          "ZUTATHasManyZUTAT_KRITISCHE_INHALTSSTOFFE"
+        ],
+        "summary": "Check row exists by ZUTAT_KRITISCHE_INHALTSSTOFFE id and parent ZUTAT id",
+        "description": "",
+        "operationId": "existsZUTAT_KRITISCHE_INHALTSSTOFFEByIdAndZUTATId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ZUTATId",
+            "in": "path",
+            "description": "ID of parent ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "ZUTAT_KRITISCHE_INHALTSSTOFFEId",
+            "in": "path",
+            "description": "ID of ZUTAT_KRITISCHE_INHALTSSTOFFE",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ZUTAT/{ZUTATId}/ZUTAT_KRITISCHE_INHALTSSTOFFE/findOne": {
+      "get": {
+        "tags": [
+          "ZUTATHasManyZUTAT_KRITISCHE_INHALTSSTOFFE"
+        ],
+        "summary": "Find one ZUTAT_KRITISCHE_INHALTSSTOFFE by parent ZUTAT id and filters",
+        "description": "",
+        "operationId": "findOneZUTAT_KRITISCHE_INHALTSSTOFFEByZUTATId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ZUTATId",
+            "in": "path",
+            "description": "ID of parent ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ZUTAT/{ZUTATId}/ZUTAT_KRITISCHE_INHALTSSTOFFE/count": {
+      "get": {
+        "tags": [
+          "ZUTATHasManyZUTAT_KRITISCHE_INHALTSSTOFFE"
+        ],
+        "summary": "Get ZUTAT_KRITISCHE_INHALTSSTOFFE count by parent id and filter",
+        "description": "",
+        "operationId": "getCountWithinZUTATId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ZUTATId",
+            "in": "path",
+            "description": "ID of parent ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}

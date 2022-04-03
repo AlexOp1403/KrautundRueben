@@ -1,0 +1,451 @@
+{
+  "tags": [{
+    "name": "ZUTATHasManyREZEPTINHALT",
+    "description": "Everything about has many relation"
+  }],
+  "paths": {
+    "/api/v1/ZUTAT/has/REZEPTINHALT": {
+      "get": {
+        "tags": [
+          "ZUTATHasManyREZEPTINHALT"
+        ],
+        "summary": "Get ZUTAT list with REZEPTINHALT children",
+        "description": "",
+        "operationId": "ZUTATHasManyREZEPTINHALTList",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ZUTAT/{ZUTATId}/REZEPTINHALT": {
+      "get": {
+        "tags": [
+          "ZUTATHasManyREZEPTINHALT"
+        ],
+        "summary": "Find REZEPTINHALT list by parent ZUTAT id",
+        "description": "Returns a single ZUTAT",
+        "operationId": "getREZEPTINHALTByZUTATId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ZUTATId",
+            "in": "path",
+            "description": "ID of ZUTAT to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": "object"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "ZUTAT not found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ZUTATHasManyREZEPTINHALT"
+        ],
+        "summary": "Insert REZEPTINHALT under a parent ZUTAT",
+        "description": "Returns a single ZUTAT",
+        "operationId": "insertREZEPTINHALTByZUTATId",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "body",
+            "name": "body",
+            "description": "REZEPTINHALT object to insert",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "ZUTATId",
+            "in": "path",
+            "description": "ID of ZUTAT to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ZUTAT/{ZUTATId}/REZEPTINHALT/{REZEPTINHALTId}": {
+      "get": {
+        "tags": [
+          "ZUTATHasManyREZEPTINHALT"
+        ],
+        "summary": "Get by REZEPTINHALT id parent ZUTAT id",
+        "description": "Returns a single ZUTAT",
+        "operationId": "getREZEPTINHALTByIdAndZUTATId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ZUTATId",
+            "in": "path",
+            "description": "ID of parent ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "REZEPTINHALTId",
+            "in": "path",
+            "description": "ID of REZEPTINHALT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": "object"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ZUTATHasManyREZEPTINHALT"
+        ],
+        "summary": "Delete by REZEPTINHALT id parent ZUTAT id",
+        "description": "Returns a single ZUTAT",
+        "operationId": "deleteREZEPTINHALTByIdAndZUTATId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ZUTATId",
+            "in": "path",
+            "description": "ID of parent ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "REZEPTINHALTId",
+            "in": "path",
+            "description": "ID of cREZEPTINHALT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ZUTATHasManyREZEPTINHALT"
+        ],
+        "summary": "Update REZEPTINHALT under a parent ZUTAT",
+        "description": "Returns a single ZUTAT",
+        "operationId": "updateREZEPTINHALTByIdAndZUTATId",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "body",
+            "name": "body",
+            "description": "REZEPTINHALT object to insert",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "ZUTATId",
+            "in": "path",
+            "description": "ID of ZUTAT to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "REZEPTINHALTId",
+            "in": "path",
+            "description": "ID of REZEPTINHALT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ZUTAT/{ZUTATId}/REZEPTINHALT/{REZEPTINHALTId}/exists": {
+      "get": {
+        "tags": [
+          "ZUTATHasManyREZEPTINHALT"
+        ],
+        "summary": "Check row exists by REZEPTINHALT id and parent ZUTAT id",
+        "description": "",
+        "operationId": "existsREZEPTINHALTByIdAndZUTATId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ZUTATId",
+            "in": "path",
+            "description": "ID of parent ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "REZEPTINHALTId",
+            "in": "path",
+            "description": "ID of REZEPTINHALT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ZUTAT/{ZUTATId}/REZEPTINHALT/findOne": {
+      "get": {
+        "tags": [
+          "ZUTATHasManyREZEPTINHALT"
+        ],
+        "summary": "Find one REZEPTINHALT by parent ZUTAT id and filters",
+        "description": "",
+        "operationId": "findOneREZEPTINHALTByZUTATId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ZUTATId",
+            "in": "path",
+            "description": "ID of parent ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ZUTAT/{ZUTATId}/REZEPTINHALT/count": {
+      "get": {
+        "tags": [
+          "ZUTATHasManyREZEPTINHALT"
+        ],
+        "summary": "Get REZEPTINHALT count by parent id and filter",
+        "description": "",
+        "operationId": "getCountWithinZUTATId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ZUTATId",
+            "in": "path",
+            "description": "ID of parent ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}

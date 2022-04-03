@@ -1,0 +1,451 @@
+{
+  "tags": [{
+    "name": "REZEPTHasManyREZEPTINHALT",
+    "description": "Everything about has many relation"
+  }],
+  "paths": {
+    "/api/v1/REZEPT/has/REZEPTINHALT": {
+      "get": {
+        "tags": [
+          "REZEPTHasManyREZEPTINHALT"
+        ],
+        "summary": "Get REZEPT list with REZEPTINHALT children",
+        "description": "",
+        "operationId": "REZEPTHasManyREZEPTINHALTList",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/REZEPT/{REZEPTId}/REZEPTINHALT": {
+      "get": {
+        "tags": [
+          "REZEPTHasManyREZEPTINHALT"
+        ],
+        "summary": "Find REZEPTINHALT list by parent REZEPT id",
+        "description": "Returns a single REZEPT",
+        "operationId": "getREZEPTINHALTByREZEPTId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "REZEPTId",
+            "in": "path",
+            "description": "ID of REZEPT to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": "object"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "REZEPT not found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "REZEPTHasManyREZEPTINHALT"
+        ],
+        "summary": "Insert REZEPTINHALT under a parent REZEPT",
+        "description": "Returns a single REZEPT",
+        "operationId": "insertREZEPTINHALTByREZEPTId",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "body",
+            "name": "body",
+            "description": "REZEPTINHALT object to insert",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "REZEPTId",
+            "in": "path",
+            "description": "ID of REZEPT to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/REZEPT/{REZEPTId}/REZEPTINHALT/{REZEPTINHALTId}": {
+      "get": {
+        "tags": [
+          "REZEPTHasManyREZEPTINHALT"
+        ],
+        "summary": "Get by REZEPTINHALT id parent REZEPT id",
+        "description": "Returns a single REZEPT",
+        "operationId": "getREZEPTINHALTByIdAndREZEPTId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "REZEPTId",
+            "in": "path",
+            "description": "ID of parent REZEPT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "REZEPTINHALTId",
+            "in": "path",
+            "description": "ID of REZEPTINHALT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": "object"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "REZEPTHasManyREZEPTINHALT"
+        ],
+        "summary": "Delete by REZEPTINHALT id parent REZEPT id",
+        "description": "Returns a single REZEPT",
+        "operationId": "deleteREZEPTINHALTByIdAndREZEPTId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "REZEPTId",
+            "in": "path",
+            "description": "ID of parent REZEPT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "REZEPTINHALTId",
+            "in": "path",
+            "description": "ID of cREZEPTINHALT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "REZEPTHasManyREZEPTINHALT"
+        ],
+        "summary": "Update REZEPTINHALT under a parent REZEPT",
+        "description": "Returns a single REZEPT",
+        "operationId": "updateREZEPTINHALTByIdAndREZEPTId",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "body",
+            "name": "body",
+            "description": "REZEPTINHALT object to insert",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "REZEPTId",
+            "in": "path",
+            "description": "ID of REZEPT to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "REZEPTINHALTId",
+            "in": "path",
+            "description": "ID of REZEPTINHALT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/REZEPT/{REZEPTId}/REZEPTINHALT/{REZEPTINHALTId}/exists": {
+      "get": {
+        "tags": [
+          "REZEPTHasManyREZEPTINHALT"
+        ],
+        "summary": "Check row exists by REZEPTINHALT id and parent REZEPT id",
+        "description": "",
+        "operationId": "existsREZEPTINHALTByIdAndREZEPTId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "REZEPTId",
+            "in": "path",
+            "description": "ID of parent REZEPT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "REZEPTINHALTId",
+            "in": "path",
+            "description": "ID of REZEPTINHALT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/REZEPT/{REZEPTId}/REZEPTINHALT/findOne": {
+      "get": {
+        "tags": [
+          "REZEPTHasManyREZEPTINHALT"
+        ],
+        "summary": "Find one REZEPTINHALT by parent REZEPT id and filters",
+        "description": "",
+        "operationId": "findOneREZEPTINHALTByREZEPTId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "REZEPTId",
+            "in": "path",
+            "description": "ID of parent REZEPT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/REZEPT/{REZEPTId}/REZEPTINHALT/count": {
+      "get": {
+        "tags": [
+          "REZEPTHasManyREZEPTINHALT"
+        ],
+        "summary": "Get REZEPTINHALT count by parent id and filter",
+        "description": "",
+        "operationId": "getCountWithinREZEPTId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "REZEPTId",
+            "in": "path",
+            "description": "ID of parent REZEPT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}

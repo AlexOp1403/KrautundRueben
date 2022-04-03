@@ -1,0 +1,451 @@
+{
+  "tags": [{
+    "name": "BESTELLUNGHasManyBESTELLUNG_REZEPT",
+    "description": "Everything about has many relation"
+  }],
+  "paths": {
+    "/api/v1/BESTELLUNG/has/BESTELLUNG_REZEPT": {
+      "get": {
+        "tags": [
+          "BESTELLUNGHasManyBESTELLUNG_REZEPT"
+        ],
+        "summary": "Get BESTELLUNG list with BESTELLUNG_REZEPT children",
+        "description": "",
+        "operationId": "BESTELLUNGHasManyBESTELLUNG_REZEPTList",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/BESTELLUNG/{BESTELLUNGId}/BESTELLUNG_REZEPT": {
+      "get": {
+        "tags": [
+          "BESTELLUNGHasManyBESTELLUNG_REZEPT"
+        ],
+        "summary": "Find BESTELLUNG_REZEPT list by parent BESTELLUNG id",
+        "description": "Returns a single BESTELLUNG",
+        "operationId": "getBESTELLUNG_REZEPTByBESTELLUNGId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "BESTELLUNGId",
+            "in": "path",
+            "description": "ID of BESTELLUNG to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": "object"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "BESTELLUNG not found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "BESTELLUNGHasManyBESTELLUNG_REZEPT"
+        ],
+        "summary": "Insert BESTELLUNG_REZEPT under a parent BESTELLUNG",
+        "description": "Returns a single BESTELLUNG",
+        "operationId": "insertBESTELLUNG_REZEPTByBESTELLUNGId",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "body",
+            "name": "body",
+            "description": "BESTELLUNG_REZEPT object to insert",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "BESTELLUNGId",
+            "in": "path",
+            "description": "ID of BESTELLUNG to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/BESTELLUNG/{BESTELLUNGId}/BESTELLUNG_REZEPT/{BESTELLUNG_REZEPTId}": {
+      "get": {
+        "tags": [
+          "BESTELLUNGHasManyBESTELLUNG_REZEPT"
+        ],
+        "summary": "Get by BESTELLUNG_REZEPT id parent BESTELLUNG id",
+        "description": "Returns a single BESTELLUNG",
+        "operationId": "getBESTELLUNG_REZEPTByIdAndBESTELLUNGId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "BESTELLUNGId",
+            "in": "path",
+            "description": "ID of parent BESTELLUNG",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "BESTELLUNG_REZEPTId",
+            "in": "path",
+            "description": "ID of BESTELLUNG_REZEPT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": "object"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "BESTELLUNGHasManyBESTELLUNG_REZEPT"
+        ],
+        "summary": "Delete by BESTELLUNG_REZEPT id parent BESTELLUNG id",
+        "description": "Returns a single BESTELLUNG",
+        "operationId": "deleteBESTELLUNG_REZEPTByIdAndBESTELLUNGId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "BESTELLUNGId",
+            "in": "path",
+            "description": "ID of parent BESTELLUNG",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "BESTELLUNG_REZEPTId",
+            "in": "path",
+            "description": "ID of cBESTELLUNG_REZEPT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "BESTELLUNGHasManyBESTELLUNG_REZEPT"
+        ],
+        "summary": "Update BESTELLUNG_REZEPT under a parent BESTELLUNG",
+        "description": "Returns a single BESTELLUNG",
+        "operationId": "updateBESTELLUNG_REZEPTByIdAndBESTELLUNGId",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "body",
+            "name": "body",
+            "description": "BESTELLUNG_REZEPT object to insert",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "BESTELLUNGId",
+            "in": "path",
+            "description": "ID of BESTELLUNG to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "BESTELLUNG_REZEPTId",
+            "in": "path",
+            "description": "ID of BESTELLUNG_REZEPT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/BESTELLUNG/{BESTELLUNGId}/BESTELLUNG_REZEPT/{BESTELLUNG_REZEPTId}/exists": {
+      "get": {
+        "tags": [
+          "BESTELLUNGHasManyBESTELLUNG_REZEPT"
+        ],
+        "summary": "Check row exists by BESTELLUNG_REZEPT id and parent BESTELLUNG id",
+        "description": "",
+        "operationId": "existsBESTELLUNG_REZEPTByIdAndBESTELLUNGId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "BESTELLUNGId",
+            "in": "path",
+            "description": "ID of parent BESTELLUNG",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "BESTELLUNG_REZEPTId",
+            "in": "path",
+            "description": "ID of BESTELLUNG_REZEPT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/BESTELLUNG/{BESTELLUNGId}/BESTELLUNG_REZEPT/findOne": {
+      "get": {
+        "tags": [
+          "BESTELLUNGHasManyBESTELLUNG_REZEPT"
+        ],
+        "summary": "Find one BESTELLUNG_REZEPT by parent BESTELLUNG id and filters",
+        "description": "",
+        "operationId": "findOneBESTELLUNG_REZEPTByBESTELLUNGId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "BESTELLUNGId",
+            "in": "path",
+            "description": "ID of parent BESTELLUNG",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/BESTELLUNG/{BESTELLUNGId}/BESTELLUNG_REZEPT/count": {
+      "get": {
+        "tags": [
+          "BESTELLUNGHasManyBESTELLUNG_REZEPT"
+        ],
+        "summary": "Get BESTELLUNG_REZEPT count by parent id and filter",
+        "description": "",
+        "operationId": "getCountWithinBESTELLUNGId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "BESTELLUNGId",
+            "in": "path",
+            "description": "ID of parent BESTELLUNG",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}

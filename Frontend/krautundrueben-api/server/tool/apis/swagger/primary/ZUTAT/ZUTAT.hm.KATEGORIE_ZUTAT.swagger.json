@@ -1,0 +1,451 @@
+{
+  "tags": [{
+    "name": "ZUTATHasManyKATEGORIE_ZUTAT",
+    "description": "Everything about has many relation"
+  }],
+  "paths": {
+    "/api/v1/ZUTAT/has/KATEGORIE_ZUTAT": {
+      "get": {
+        "tags": [
+          "ZUTATHasManyKATEGORIE_ZUTAT"
+        ],
+        "summary": "Get ZUTAT list with KATEGORIE_ZUTAT children",
+        "description": "",
+        "operationId": "ZUTATHasManyKATEGORIE_ZUTATList",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ZUTAT/{ZUTATId}/KATEGORIE_ZUTAT": {
+      "get": {
+        "tags": [
+          "ZUTATHasManyKATEGORIE_ZUTAT"
+        ],
+        "summary": "Find KATEGORIE_ZUTAT list by parent ZUTAT id",
+        "description": "Returns a single ZUTAT",
+        "operationId": "getKATEGORIE_ZUTATByZUTATId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ZUTATId",
+            "in": "path",
+            "description": "ID of ZUTAT to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": "object"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "ZUTAT not found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ZUTATHasManyKATEGORIE_ZUTAT"
+        ],
+        "summary": "Insert KATEGORIE_ZUTAT under a parent ZUTAT",
+        "description": "Returns a single ZUTAT",
+        "operationId": "insertKATEGORIE_ZUTATByZUTATId",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "body",
+            "name": "body",
+            "description": "KATEGORIE_ZUTAT object to insert",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "ZUTATId",
+            "in": "path",
+            "description": "ID of ZUTAT to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ZUTAT/{ZUTATId}/KATEGORIE_ZUTAT/{KATEGORIE_ZUTATId}": {
+      "get": {
+        "tags": [
+          "ZUTATHasManyKATEGORIE_ZUTAT"
+        ],
+        "summary": "Get by KATEGORIE_ZUTAT id parent ZUTAT id",
+        "description": "Returns a single ZUTAT",
+        "operationId": "getKATEGORIE_ZUTATByIdAndZUTATId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ZUTATId",
+            "in": "path",
+            "description": "ID of parent ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "KATEGORIE_ZUTATId",
+            "in": "path",
+            "description": "ID of KATEGORIE_ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": "object"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ZUTATHasManyKATEGORIE_ZUTAT"
+        ],
+        "summary": "Delete by KATEGORIE_ZUTAT id parent ZUTAT id",
+        "description": "Returns a single ZUTAT",
+        "operationId": "deleteKATEGORIE_ZUTATByIdAndZUTATId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ZUTATId",
+            "in": "path",
+            "description": "ID of parent ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "KATEGORIE_ZUTATId",
+            "in": "path",
+            "description": "ID of cKATEGORIE_ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ZUTATHasManyKATEGORIE_ZUTAT"
+        ],
+        "summary": "Update KATEGORIE_ZUTAT under a parent ZUTAT",
+        "description": "Returns a single ZUTAT",
+        "operationId": "updateKATEGORIE_ZUTATByIdAndZUTATId",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "in": "body",
+            "name": "body",
+            "description": "KATEGORIE_ZUTAT object to insert",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "ZUTATId",
+            "in": "path",
+            "description": "ID of ZUTAT to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "KATEGORIE_ZUTATId",
+            "in": "path",
+            "description": "ID of KATEGORIE_ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ZUTAT/{ZUTATId}/KATEGORIE_ZUTAT/{KATEGORIE_ZUTATId}/exists": {
+      "get": {
+        "tags": [
+          "ZUTATHasManyKATEGORIE_ZUTAT"
+        ],
+        "summary": "Check row exists by KATEGORIE_ZUTAT id and parent ZUTAT id",
+        "description": "",
+        "operationId": "existsKATEGORIE_ZUTATByIdAndZUTATId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ZUTATId",
+            "in": "path",
+            "description": "ID of parent ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "KATEGORIE_ZUTATId",
+            "in": "path",
+            "description": "ID of KATEGORIE_ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ZUTAT/{ZUTATId}/KATEGORIE_ZUTAT/findOne": {
+      "get": {
+        "tags": [
+          "ZUTATHasManyKATEGORIE_ZUTAT"
+        ],
+        "summary": "Find one KATEGORIE_ZUTAT by parent ZUTAT id and filters",
+        "description": "",
+        "operationId": "findOneKATEGORIE_ZUTATByZUTATId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ZUTATId",
+            "in": "path",
+            "description": "ID of parent ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "type": "String",
+            "description": "Comma seperated fields of model"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ZUTAT/{ZUTATId}/KATEGORIE_ZUTAT/count": {
+      "get": {
+        "tags": [
+          "ZUTATHasManyKATEGORIE_ZUTAT"
+        ],
+        "summary": "Get KATEGORIE_ZUTAT count by parent id and filter",
+        "description": "",
+        "operationId": "getCountWithinZUTATId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [{
+            "name": "ZUTATId",
+            "in": "path",
+            "description": "ID of parent ZUTAT",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "where",
+            "type": "String",
+            "description": "Where expression"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "page size limit",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "pagination offset",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "description": "sort parameter",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}
